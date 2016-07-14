@@ -17,7 +17,7 @@ A simple lisp interpreter with clojure-like syntax.
 (say-hello-to "Obi-Wan Kenobi") ;; this should print "Hello Obi-Wan Kenobi" without the quotes
 ```
 
-Check the file scripts/examples.cljs for more examples
+Check the file [scripts/examples.cljs](https://github.com/davidarias/jediscript/blob/master/scripts/examples.cljs) for more examples
 
 ## Awesome! How do I use it?
 
