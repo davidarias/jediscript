@@ -34,6 +34,12 @@
 (defmacro new-line []
   '(print))
 
+
+(defn empty? [list]
+  (if (== nil (head list) )
+    true
+    false))
+
 ;; some useful defs :)
 (def tie-fighter "|-o-|")
 (def death-star-defense-team "|-o-| (-o-) |-o-|")

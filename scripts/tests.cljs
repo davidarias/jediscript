@@ -51,6 +51,8 @@
 (test "pop!"           (pop! '( 5 )) 5)
 (test "concat!"        (head (concat! '( 5 ) '( 6 ))) 5)
 (test "apply"          (apply + [1 2 3]) 6)
+(test "empty?"         (empty? '()) true)
+(test "empty? 2"       (empty? '( 3 4 )) false)
 
 
 
