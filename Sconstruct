@@ -1,0 +1,26 @@
+import os
+
+def get_sources(src, ext):
+    "get sources of ext extension from src dir"
+    sources = []
+
+    for root, dirnames, filenames in os.walk(src):
+        for dirname in dirnames:
+            sources += Glob(os.path.join(root, dirname, '*.%s' % ext))
+
+    sources += Glob('%s/*.%s' % (src, ext))
+
+    return sources
+
+# scons -Q define=DEBUG
+cppdefines = []
+for key, value in ARGLIST:
+    if key == 'define':
+        cppdefines.append(value)
+
+env = Environment(CPPDEFINES = cppdefines, CCFLAGS=['-Wall', '-Wextra', '-std=c++11'])
+
+env.Program(
+    'bin/jediscript',
+     get_sources('src', 'cpp')
+)
